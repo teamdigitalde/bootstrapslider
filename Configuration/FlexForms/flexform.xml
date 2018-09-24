@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:bootstrapslider/Resources/Private/Language/locallang_be.xml:flexforms_tab.settings</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.options.items>
+                        <TCEforms>
+                            <label>Anzahl der aktiven Items</label>
+                            <onChange>reload</onChange>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">1 Item</numIndex>
+                                        <numIndex index="1">1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">2 Items</numIndex>
+                                        <numIndex index="1">2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">3 Items</numIndex>
+                                        <numIndex index="1">3</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">4 Items</numIndex>
+                                        <numIndex index="1">4</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">5 Items</numIndex>
+                                        <numIndex index="1">5</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">6 Items</numIndex>
+                                        <numIndex index="1">6</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </settings.options.items>
+                    <settings.options.uebergang>
+                        <TCEforms>
+                            <label>Übergang</label>
+                            <displayCond>FIELD:settings.options.items:=:1</displayCond>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">Normal Slide</numIndex>
+                                        <numIndex index="1">slide</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">Fade</numIndex>
+                                        <numIndex index="1">slide carousel-fade</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </settings.options.uebergang>
+                    <!-- startingpoint -->
+                    <persistence.storagePid>
+                        <TCEforms>
+                            <label>LLL:EXT:lang/locallang_general.xml:LGL.startingpoint</label>
+                            <config>
+                                <type>group</type>
+                                <internal_type>db</internal_type>
+                                <allowed>pages</allowed>
+                                <size>3</size>
+                                <maxitems>50</maxitems>
+                                <minitems>0</minitems>
+                                <show_thumbs>1</show_thumbs>
+                                <wizards>
+                                    <suggest>
+                                        <type>suggest</type>
+                                    </suggest>
+                                </wizards>
+                            </config>
+                        </TCEforms>
+                    </persistence.storagePid>
+
+                    <!-- recursive -->
+                    <persistence.recursive>
+                        <TCEforms>
+                            <label>LLL:EXT:lang/locallang_general.xlf:LGL.recursive</label>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:recursive.I.0</numIndex>
+                                        <numIndex index="1">0</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:recursive.I.1</numIndex>
+                                        <numIndex index="1">1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:recursive.I.2</numIndex>
+                                        <numIndex index="1">2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:recursive.I.3</numIndex>
+                                        <numIndex index="1">3</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:recursive.I.4</numIndex>
+                                        <numIndex index="1">4</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:recursive.I.5</numIndex>
+                                        <numIndex index="1">250</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </persistence.recursive>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

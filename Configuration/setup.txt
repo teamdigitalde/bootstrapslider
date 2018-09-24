@@ -1,0 +1,33 @@
+plugin.tx_bootstrapslider_bootstrapslider {
+	view {
+		templateRootPaths {
+			0 = EXT:bootstrapslider/Resources/Private/Templates/
+			10 = {$plugin.tx_bootstrapslider_bootstrapslider.view.templateRootPath}
+		}
+		partialRootPaths {
+			0 = EXT:bootstrapslider/Resources/Private/Partials
+			10 = {$plugin.tx_bootstrapslider_bootstrapslider.view.partialRootPath}
+		}
+		layoutRootPaths {
+			0 = EXT:bootstrapslider/Resources/Private/Layouts/
+			10 = {$plugin.tx_bootstrapslider_bootstrapslider.view.layoutRootPath}
+		}
+	}
+	persistence {
+		storagePid = {$plugin.tx_bootstrapslider_bootstrapslider.persistence.storagePid}
+		recursive = {$plugin.tx_bootstrapslider_bootstrapslider.persistence.recursive}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+		skipDefaultArguments = 1
+	}
+	settings {
+		#detailPid = {$plugin.tx_sitepackage_bootstrapslider.settings.detailPid}
+	}
+}
+
+#page.includeCSS.31 =  EXT:bootstrapslider/Resources/Public/Css/bootstrap.min.css
+page.includeCSS.35 = EXT:bootstrapslider/Resources/Public/Css/styles.css
+page.includeJSFooter.0 = EXT:bootstrapslider/Resources/Public/JavaScript/jquery.mobile.custom.min.js
+page.includeJSFooter.20 = EXT:bootstrapslider/Resources/Public/JavaScript/main.js

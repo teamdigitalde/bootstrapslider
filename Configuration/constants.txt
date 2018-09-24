@@ -1,0 +1,24 @@
+plugin.tx_bootstrapslider_bootstrapslider {
+	view {
+		# cat=plugin.tx_machinery/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:bootstrapslider/Resources/Private/Templates/
+		# cat=plugin.tx_machinery/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:bootstrapslider/Resources/Private/Partials/
+		# cat=plugin.tx_machinery/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:bootstrapslider/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_machinery//a; type=string; label=Default storage PID
+		storagePid =
+		# cat=plugin.tx_machinery//a; type=string; label=recursion level
+		recursive = 2
+	}
+	settings {
+		# cat=plugin.tx_machinery//a; type=string; label=PID where the enquery form could be found
+		enqueryPid =
+		# cat=plugin.tx_machinery//a; type=string; label=PID where the detail view could be found
+		detailPid =
+		# cat=plugin.tx_machinery//a; type=boolean; label=Use the nocookie-domain for youtube videos - be aware of JS problems, that may arise
+		useYoutubeNocookieDomain = 0
+	}
+}
