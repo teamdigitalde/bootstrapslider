@@ -65,6 +65,28 @@
                             </config>
                         </TCEforms>
                     </settings.options.uebergang>
+                    <settings.options.autoplay>
+                        <TCEforms>
+                            <label>Autoplay deaktivieren</label>
+                            <onChange>reload</onChange>
+                            <config>
+                                <type>check</type>
+                            </config>
+                        </TCEforms>
+                    </settings.options.autoplay>
+                    <settings.options.speed>
+                        <TCEforms>
+                            <label>Slidegeschwindigkeit (in ms)</label>
+                            <displayCond>FIELD:settings.options.autoplay:=:0</displayCond>
+                            <config>
+                                <type>input</type>
+                                <size>20</size>
+                                <max>30</max>
+                                <eval>trim</eval>
+                                <placeholder>in ms</placeholder>
+                            </config>
+                        </TCEforms>
+                    </settings.options.speed>
                     <!-- startingpoint -->
                     <persistence.storagePid>
                         <TCEforms>
