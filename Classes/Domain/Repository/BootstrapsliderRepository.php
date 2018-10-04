@@ -39,4 +39,17 @@ class BootstrapsliderRepository extends \TYPO3\CMS\Extbase\Persistence\Repositor
         'sorting' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
     );
 
+    /**
+     * All Queries withoud storagePID
+     *
+     * @return QueryInterface
+     */
+    public function createQuery()
+    {
+        $query = parent::createQuery();
+        $query->getQuerySettings()->setRespectStoragePage(false);
+        $query->getQuerySettings()->setRespectSysLanguage(false);
+        return $query;
+    }
+
 }

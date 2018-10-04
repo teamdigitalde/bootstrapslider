@@ -71,7 +71,8 @@ class BootstrapsliderController extends \TYPO3\CMS\Extbase\Mvc\Controller\Action
      */
     public function sliderAction() {
         $contentObject = $this->configurationManager->getContentObject()->data;
-        $sliders = $this->bootstrapsliderRepository->findAll();
+        $sliders = $this->bootstrapsliderRepository->findByTtContent($contentObject['uid']);
+//        $sliders = $this->bootstrapsliderRepository->findAll();
 
         // Standard Übergang ist "normal-slide"
         if(empty($this->settings['options']['uebergang'])) {
@@ -106,6 +107,9 @@ class BootstrapsliderController extends \TYPO3\CMS\Extbase\Mvc\Controller\Action
             $this->settings['options']['itemWrap'] = 'sechsSpaltig';
             $this->settings['options']['uebergang'] = 'slide';
             $this->settings['options']['items'] = 'six-items';
+        }
+        if(empty($this->settings['options']['speed'])) {
+            $this->settings['options']['speed'] = 5000;
         }
 
         $this->view->assignMultiple(array(

@@ -1,0 +1,13 @@
+mod.wizards.newContentElement.wizardItems.plugins {
+	elements {
+		bootstrapslider {
+			iconIdentifier = ext-bootstrapslider-wizard-icon
+			title = Bootstrapslider
+			description = team digital Bootstrapslider
+			tt_content_defValues {
+				CType = list
+				list_type = bootstrapslider_bootstrapslider
+			}
+		}
+	}
+}

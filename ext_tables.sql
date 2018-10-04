@@ -3,7 +3,7 @@
 #
 
 CREATE TABLE tt_content (
-    tx_bootstrapslider_slider int(11) DEFAULT '0' NOT NULL,
+    tx_bootstrapslider_slider text,
 );
 
 CREATE TABLE tx_bootstrapslider_domain_model_bootstrapslider (

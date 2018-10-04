@@ -9,12 +9,12 @@
                     <f:if condition="{slideIterator.isFirst}">
                         <f:then>
                             <div class="carousel-item active">
-                                <f:render partial="Bootstrapslider/Slide" arguments="{slide:slide}"/>
+                                <f:render partial="Bootstrapslider/Slide" arguments="{slide:slide, options:options}"/>
                             </div>
                         </f:then>
                         <f:else>
                             <div class="carousel-item">
-                                <f:render partial="Bootstrapslider/Slide" arguments="{slide:slide}"/>
+                                <f:render partial="Bootstrapslider/Slide" arguments="{slide:slide, options:options}"/>
                             </div>
                         </f:else>
                     </f:if>
@@ -29,12 +29,12 @@
                     <f:if condition="{slideIterator.isFirst}">
                         <f:then>
                             <div class="carousel-item {options.itemWrap} active">
-                                <f:render partial="Bootstrapslider/Slide" arguments="{slide:slide}"/>
+                                <f:render partial="Bootstrapslider/Slide" arguments="{slide:slide, options:options}"/>
                             </div>
                         </f:then>
                         <f:else>
                             <div class="carousel-item {options.itemWrap}">
-                                <f:render partial="Bootstrapslider/Slide" arguments="{slide:slide}"/>
+                                <f:render partial="Bootstrapslider/Slide" arguments="{slide:slide, options:options}"/>
                             </div>
                         </f:else>
                     </f:if>
@@ -43,27 +43,19 @@
         </f:if>
         
         <div class="carousel-nav">
-            <a class="carousel-control-prev" href="#td-carousel{contentObject.uid}" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#td-carousel{contentObject.uid}" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-            <ol class="carousel-indicators">
-            <f:for each="{sliders}" as="slide" iteration="a" key="slideNumber">
-                <f:if condition="{a.isFirst}">
-                    {a}
-                    <f:then>
-                        <li data-target="#td-carousel{contentObject.uid}" data-slide-to="{slideNumber}" class="active"></li>
-                    </f:then>
-                    <f:else>
-                        <li data-target="#td-carousel{contentObject.uid}" data-slide-to="{slideNumber}"></li>
-                    </f:else>
-                </f:if>
-            </f:for>
-            </ol>
+            <f:if condition="{options.shownavigation} == 0">
+                <a class="carousel-control-prev" href="#td-carousel{contentObject.uid}" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#td-carousel{contentObject.uid}" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </f:if>
+            <f:if condition="{options.items} == 1">
+                <f:render partial="Bootstrapslider/Pagination" arguments="{_all}"/>
+            </f:if>
         </div>
     </div>
 </f:section>

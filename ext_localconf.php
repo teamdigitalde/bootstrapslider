@@ -17,18 +17,18 @@ defined('TYPO3_MODE') || die();
 // Individuelle RTE-Konfiguration registrieren in der ext_localconf.php
 $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['custom'] = 'EXT:bootstrapslider/Configuration/RTE/custom.yaml';
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-    'mod.wizards.newContentElement.wizardItems.plugins {
-	elements {
-		bootstrapslider {
-			icon = ' . \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . '/Resources/Public/Icons/modul_icon.png
-			title = Bootstrapslider
-			description = team digital Bootstrapslider
-			tt_content_defValues {
-				CType = list
-				list_type = bootstrapslider_bootstrapslider
-			}
-		}
-	}
-}'
-);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrapslider/Configuration/TSconfig/ContentElementWizard.txt">');
+if (TYPO3_MODE === 'BE') {
+    $icons = [
+        'ext-bootstrapslider-wizard-icon' => 'modul_icon.png',
+        'ext-bootstrapslider-image' => 'modul_icon.png',
+    ];
+    $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+    foreach ($icons as $identifier => $path) {
+        $iconRegistry->registerIcon(
+            $identifier,
+            \TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class,
+            ['source' => 'EXT:'.$_EXTKEY.'/Resources/Public/Icons/' . $path]
+        );
+    }
+}
