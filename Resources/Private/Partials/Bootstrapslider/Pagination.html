@@ -1,0 +1,17 @@
+<f:if condition="{options.showpagination} == 0">
+	<f:then>
+		<ol class="carousel-indicators {options.paginationType}">
+			<f:for each="{sliders}" as="slide" iteration="a" key="slideNumber">
+				<f:if condition="{a.isFirst}">
+					{a}
+					<f:then>
+						<li data-target="#td-carousel{contentObject.uid}" data-slide-to="{slideNumber}" class="active"></li>
+					</f:then>
+					<f:else>
+						<li data-target="#td-carousel{contentObject.uid}" data-slide-to="{slideNumber}"></li>
+					</f:else>
+				</f:if>
+			</f:for>
+		</ol>
+	</f:then>
+</f:if>

@@ -1,25 +1,7 @@
-.tx-bootstrapslider {
-    position: relative;
-    z-index: 999;
-}
 .carousel-item img {
     width: 100%;
     height: auto;
 }
-
-/* Slidegeschwindigkeit */
-.tx-bootstrapslider .carousel-item {
-    transition: -webkit-transform .5s ease;
-    transition: transform .5s ease;
-    transition: transform .5s ease,-webkit-transform .5s ease;
-}
-.carousel-fade .carousel-item {
-    opacity: 0;
-    transition-duration: 1s;
-    transition-property: opacity;
-}
-/* ENDE Slidegeschwindigkeit */
-
 /* START Allgemeine Slider Formatierungen */
 .tx-bootstrapslider .carousel-control-next,
 .tx-bootstrapslider .carousel-control-prev {
@@ -83,7 +65,7 @@
 /* START Slider Animation */
 .carousel-inner .carousel-item-right.active,
 .carousel-inner .carousel-item-next {
-    transform: translateX(90%);
+    transform: translateX(99%);
 }
 
 .carousel-inner .carousel-item-left.active,
@@ -109,6 +91,7 @@
     .carousel-inner.multiple.two-items .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item {
         transition: none;
     }
+
     .carousel-inner.multiple.two-items .active.carousel-item + .carousel-item + .carousel-item {
         position: absolute;
         top: 0;
@@ -117,23 +100,8 @@
         display: block;
         visibility: visible;
     }
-    /* left or forward direction */
-    .multiSlide .two-items .active.carousel-item-left + .carousel-item-next.carousel-item-left,
-    .multiSlide .two-items .carousel-item-next.carousel-item-left + .carousel-item{
-        position: relative;
-        transform: translate3d(-100%, 0, 0);
-        visibility: visible;
-    }
-    /* right or prev direction */
-    .multiSlide .two-items .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
-    .multiSlide .two-items .carousel-item-prev.carousel-item-right + .carousel-item,
-    .multiSlide .two-items .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item{
-        position: relative;
-        transform: translate3d(100%, 0, 0);
-        visibility: visible;
-        display: block;
-        visibility: visible;
-    }
+
+
 
     /* show 3 items */
     .carousel-inner.multiple.three-items .active,
@@ -146,30 +114,12 @@
     .carousel-inner.multiple.three-items .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
         transition: none;
     }
+
     .carousel-inner.multiple.three-items .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
         position: absolute;
         top: 0;
         right: -33.3333%;
         z-index: -1;
-        display: block;
-        visibility: visible;
-    }
-    /* left or forward direction */
-    .multiSlide .three-items .active.carousel-item-left + .carousel-item-next.carousel-item-left,
-    .multiSlide .three-items .carousel-item-next.carousel-item-left + .carousel-item,
-    .multiSlide .three-items .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item{
-        position: relative;
-        transform: translate3d(-100%, 0, 0);
-        visibility: visible;
-    }
-    /* right or prev direction */
-    .multiSlide .three-items .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
-    .multiSlide .three-items .carousel-item-prev.carousel-item-right + .carousel-item,
-    .multiSlide .three-items .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
-    .multiSlide .three-items .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item{
-        position: relative;
-        transform: translate3d(100%, 0, 0);
-        visibility: visible;
         display: block;
         visibility: visible;
     }
@@ -179,7 +129,8 @@
     .carousel-inner.multiple.four-items .active,
     .carousel-inner.multiple.four-items .active + .carousel-item,
     .carousel-inner.multiple.four-items .active + .carousel-item + .carousel-item,
-    .carousel-inner.multiple.four-items .active + .carousel-item + .carousel-item + .carousel-item {
+    .carousel-inner.multiple.four-items .active + .carousel-item + .carousel-item + .carousel-item,
+    .carousel-inner.multiple.four-items .active + .carousel-item + .carousel-item + .carousel-item + .carousel-item  {
         display: block;
     }
     .carousel-inner.multiple.four-items .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
@@ -198,36 +149,14 @@
         visibility: visible;
     }
 
-    /* left or forward direction */
-    .multiSlide .four-items .active.carousel-item-left + .carousel-item-next.carousel-item-left,
-    .multiSlide .four-items .carousel-item-next.carousel-item-left + .carousel-item,
-    .multiSlide .four-items .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
-    .multiSlide .four-items .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item{
-        position: relative;
-        transform: translate3d(-100%, 0, 0);
-        visibility: visible;
-    }
-
-    /* right or prev direction */
-    .multiSlide .four-items .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
-    .multiSlide .four-items .carousel-item-prev.carousel-item-right + .carousel-item,
-    .multiSlide .four-items .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
-    .multiSlide .four-items .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item,
-    .multiSlide .four-items .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item{
-        position: relative;
-        transform: translate3d(100%, 0, 0);
-        visibility: visible;
-        display: block;
-        visibility: visible;
-    }
-
 
     /* show 5 items */
     .carousel-inner.multiple.five-items .active,
     .carousel-inner.multiple.five-items .active + .carousel-item,
     .carousel-inner.multiple.five-items .active + .carousel-item + .carousel-item,
     .carousel-inner.multiple.five-items .active + .carousel-item + .carousel-item + .carousel-item,
-    .carousel-inner.multiple.five-items .active + .carousel-item + .carousel-item + .carousel-item + .carousel-item  {
+    .carousel-inner.multiple.five-items .active + .carousel-item + .carousel-item + .carousel-item + .carousel-item,
+    .carousel-inner.multiple.five-items .active + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item  {
         display: block;
     }
     .carousel-inner.multiple.five-items .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
@@ -241,33 +170,8 @@
     .carousel-inner.multiple.five-items .active.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
         position: absolute;
         top: 0;
-        right: -20%;
+        right: -25%;
         z-index: -1;
-        display: block;
-        visibility: visible;
-    }
-
-    /* left or forward direction */
-    .multiSlide .five-items .active.carousel-item-left + .carousel-item-next.carousel-item-left,
-    .multiSlide .five-items .carousel-item-next.carousel-item-left + .carousel-item,
-    .multiSlide .five-items .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
-    .multiSlide .five-items .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item,
-    .multiSlide .five-items .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item{
-        position: relative;
-        transform: translate3d(-100%, 0, 0);
-        visibility: visible;
-    }
-
-    /* right or prev direction */
-    .multiSlide .five-items .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
-    .multiSlide .five-items .carousel-item-prev.carousel-item-right + .carousel-item,
-    .multiSlide .five-items .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
-    .multiSlide .five-items .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item,
-    .multiSlide .five-items .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item,
-    .multiSlide .five-items .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item{
-        position: relative;
-        transform: translate3d(100%, 0, 0);
-        visibility: visible;
         display: block;
         visibility: visible;
     }
@@ -290,39 +194,33 @@
         transition: none;
     }
 
-    /* left or forward direction */
-    .multiSlide .six-items .active.carousel-item-left + .carousel-item-next.carousel-item-left,
-    .multiSlide .six-items .carousel-item-next.carousel-item-left + .carousel-item,
-    .multiSlide .six-items .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
-    .multiSlide .six-items .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item,
-    .multiSlide .six-items .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item,
-    .multiSlide .six-items .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item{
-        position: relative;
-        transform: translate3d(-100%, 0, 0);
-        visibility: visible;
-    }
-
-    /* right or prev direction */
-    .multiSlide .six-items .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
-    .multiSlide .six-items .carousel-item-prev.carousel-item-right + .carousel-item,
-    .multiSlide .six-items .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
-    .multiSlide .six-items .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item,
-    .multiSlide .six-items .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item,
-    .multiSlide .six-items .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item,
-    .multiSlide .six-items .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
-        position: relative;
-        transform: translate3d(100%, 0, 0);
-        visibility: visible;
-        display: block;
-        visibility: visible;
-    }
-
     .carousel-inner.multiple.six-items .active.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
         position: absolute;
         top: 0;
         right: -16.666667%;
         z-index: -1;
         display: block;
+        visibility: visible;
+    }
+
+
+    .carousel-inner.multiple.twelve-items .active.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: absolute;
+        top: 0;
+        right: -16.666667%;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+
+
+    /* left or forward direction */
+    .multiSlide .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+    .multiSlide .carousel-item-next.carousel-item-left + .carousel-item,
+    .multiSlide .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+    .multiSlide .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
         visibility: visible;
     }
 
@@ -345,10 +243,29 @@
         display: block;
         visibility: visible;
     }
+
+    /* right or prev direction */
+    .multiSlide .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+    .multiSlide .carousel-item-prev.carousel-item-right + .carousel-item,
+    .multiSlide .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+    .multiSlide .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+
 }
 /* ENDE Multiple Items */
 
 /* START FADE EFFEKT */
+.carousel-fade .carousel-item {
+    opacity: 0;
+    transition-duration: .6s;
+    transition-property: opacity;
+}
+
 .carousel-fade  .carousel-item.active,
 .carousel-fade  .carousel-item-next.carousel-item-left,
 .carousel-fade  .carousel-item-prev.carousel-item-right {
@@ -406,6 +323,5 @@ verborgen {display: none;}
     background: #fff;
 }
 
-/* Bootstrap 4 Carousel CSS */
 .carousel{position:relative}.carousel-inner{position:relative;width:100%;overflow:hidden}.carousel-item{position:relative;display:none;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;transition:-webkit-transform .6s ease;transition:transform .6s ease;transition:transform .6s ease,-webkit-transform .6s ease;-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-perspective:1000px;perspective:1000px}.carousel-item-next,.carousel-item-prev,.carousel-item.active{display:block}.carousel-item-next,.carousel-item-prev{position:absolute;top:0}.carousel-item-next.carousel-item-left,.carousel-item-prev.carousel-item-right{-webkit-transform:translateX(0);transform:translateX(0)}@supports ((-webkit-transform-style:preserve-3d) or (transform-style:preserve-3d)){.carousel-item-next.carousel-item-left,.carousel-item-prev.carousel-item-right{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}}.active.carousel-item-right,.carousel-item-next{-webkit-transform:translateX(100%);transform:translateX(100%)}@supports ((-webkit-transform-style:preserve-3d) or (transform-style:preserve-3d)){.active.carousel-item-right,.carousel-item-next{-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}}.active.carousel-item-left,.carousel-item-prev{-webkit-transform:translateX(-100%);transform:translateX(-100%)}@supports ((-webkit-transform-style:preserve-3d) or (transform-style:preserve-3d)){.active.carousel-item-left,.carousel-item-prev{-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0)}}.carousel-control-next,.carousel-control-prev{position:absolute;top:0;bottom:0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;width:15%;color:#fff;text-align:center;opacity:.5}.carousel-control-next:focus,.carousel-control-next:hover,.carousel-control-prev:focus,.carousel-control-prev:hover{color:#fff;text-decoration:none;outline:0;opacity:.9}.carousel-control-prev{left:0}.carousel-control-next{right:0}.carousel-control-next-icon,.carousel-control-prev-icon{display:inline-block;width:20px;height:20px;background:transparent no-repeat center center;background-size:100% 100%}.carousel-control-prev-icon{background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E")}.carousel-control-next-icon{background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E")}.carousel-indicators{position:absolute;right:0;bottom:10px;left:0;z-index:15;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding-left:0;margin-right:15%;margin-left:15%;list-style:none}.carousel-indicators li{position:relative;-webkit-box-flex:0;-ms-flex:0 1 auto;flex:0 1 auto;width:30px;height:3px;margin-right:3px;margin-left:3px;text-indent:-999px;background-color:rgba(255,255,255,.5)}.carousel-indicators li::before{position:absolute;top:-10px;left:0;display:inline-block;width:100%;height:10px;content:""}.carousel-indicators li::after{position:absolute;bottom:-10px;left:0;display:inline-block;width:100%;height:10px;content:""}.carousel-indicators .active{background-color:#fff}
 .carousel-caption{position:absolute;right:15%;bottom:20px;left:15%;z-index:10;padding-top:20px;padding-bottom:20px;color:#fff;text-align:center}.carousel-inner.multiple {display: flex;}
