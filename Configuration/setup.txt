@@ -27,7 +27,7 @@ plugin.tx_bootstrapslider_bootstrapslider {
 	}
 }
 
-#page.includeCSS.31 =  EXT:bootstrapslider/Resources/Public/Css/bootstrap.min.css
 page.includeCSS.35 = EXT:bootstrapslider/Resources/Public/Css/bootstrapslider.css
 page.includeJSFooter.0 = EXT:bootstrapslider/Resources/Public/JavaScript/jquery.mobile.custom.min.js
-page.includeJSFooter.20 = EXT:bootstrapslider/Resources/Public/JavaScript/main.js
+page.includeJSFooter.touchSwipe = EXT:bootstrapslider/Resources/Public/JavaScript/touchswipe.min.js
+page.includeJSFooter.50 = EXT:bootstrapslider/Resources/Public/JavaScript/main.js

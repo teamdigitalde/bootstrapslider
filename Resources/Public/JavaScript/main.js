@@ -1,11 +1,16 @@
-/*$(document).ready(function() {
-    $(".carousel").swiperight(function() {
-        $(this).carousel('prev');
-    });
-    $(".carousel").swipeleft(function() {
-        $(this).carousel('next');
-    });
-});*/
+$(".carousel").swipe({
+	swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+		if (direction == 'left') $(this).carousel('next');
+		if (direction == 'right') $(this).carousel('prev');
+	},
+	allowPageScroll:"vertical"
+});
+jQuery(".carousel-item").mousedown(function() {
+	jQuery(this).addClass("grabbing");
+});
+jQuery(".carousel-item").mouseup(function() {
+	jQuery(this).removeClass("grabbing");
+});
 
 $('.carousel').carousel({
     keyboard: true,

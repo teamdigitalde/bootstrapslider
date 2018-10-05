@@ -6,6 +6,12 @@
     width: 100%;
     height: auto;
 }
+.carousel-item.grabbing {
+    cursor: grabbing !important;
+}
+.carousel-item:hover {
+    cursor: grab;
+}
 
 /* Slidegeschwindigkeit */
 .tx-bootstrapslider .carousel-item {
