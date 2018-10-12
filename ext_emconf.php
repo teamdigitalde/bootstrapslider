@@ -9,6 +9,9 @@ $EM_CONF[$_EXTKEY] = [
     'category' => 'templates',
     'constraints' => [
         'conflicts' => [
+            'depends' => [
+                'typo3' => '8.7.0-9.9.99',
+            ],
         ],
     ],
     'autoload' => [
