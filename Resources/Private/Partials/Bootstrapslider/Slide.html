@@ -4,7 +4,6 @@
 <f:if condition="{Slidelink}">
     <f:then>
       <f:link.typolink parameter="{Slidelink}">
-		  <f:debug>{Slidelink}</f:debug>
           <f:for each="{slide.image}" as="image">
               <f:image src="{image.uid}" treatIdAsReference="1"/>
           </f:for>
