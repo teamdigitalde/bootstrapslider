@@ -145,24 +145,64 @@ $GLOBALS['TCA']['tx_bootstrapslider_domain_model_bootstrapslider'] = array(
             'label' => 'Bilder',
             'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
                 'image_slide', array(
-                'minitems' => 1,
-                'maxitems' => 1,
-                'appearance' => array(
-                    'collapseAll' => 1,
-                    'createNewRelationLinkTitle' => 'Bild auswählen',
-                    'showAllLocalizationLink' => 1,
-                    'showSynchronizationLink' => 1,
-                    'showPossibleLocalizationRecords' => 1,
-                    'newRecordLinkTitle' => 'Neu',
-                    'levelLinksPosition' => 'top',
-                    'useSortable' => 0,
-                    'enabledControls' => array(
-                        'info' => 0,
-                        'dragdrop' => 0,
-                    )
+                    'minitems' => 1,
+                    'maxitems' => 1,
+                    'appearance' => [
+                        'collapseAll' => 1,
+                        'createNewRelationLinkTitle' => 'Bild auswählen',
+                        'showAllLocalizationLink' => 1,
+                        'showSynchronizationLink' => 1,
+                        'showPossibleLocalizationRecords' => 1,
+                        'newRecordLinkTitle' => 'Neu',
+                        'levelLinksPosition' => 'top',
+                        'useSortable' => 0,
+                        'enabledControls' => array(
+                            'info' => 0,
+                            'dragdrop' => 0,
+                        )
+                    ],
+                    'overrideChildTca' => [
+                        'types' => [
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_UNKNOWN => [
+                                'showitem' => '
+                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;newsPalette,
+                                        --palette--;;imageoverlayPalette,
+                                        --palette--;;filePalette'
+                            ],
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => [
+                                'showitem' => '
+                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;newsPalette,
+                                        --palette--;;imageoverlayPalette,
+                                        --palette--;;filePalette'
+                            ],
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                                'showitem' => '
+                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;newsPalette,
+                                        --palette--;;imageoverlayPalette,
+                                        --palette--;;filePalette'
+                            ],
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => [
+                                'showitem' => '
+                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;newsPalette,
+                                        --palette--;;imageoverlayPalette,
+                                        --palette--;;filePalette'
+                            ],
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
+                                'showitem' => '
+                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;newsPalette,
+                                        --palette--;;imageoverlayPalette,
+                                        --palette--;;filePalette'
+                            ],
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
+                                'showitem' => '
+                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;newsPalette,
+                                        --palette--;;imageoverlayPalette,
+                                        --palette--;;filePalette'
+                            ]
+                        ],
+                    ],
                 ),
-            ),
-                $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+                $GLOBALS['TYPO3_CONF_VARS']['GFX']['mediafile_ext']
             ),
         ),
         'name' => array(

@@ -1,17 +1,46 @@
-<f:for each="{slide.image}" as="image">
-    <f:image src="{image.uid}" treatIdAsReference="1"/>
+<f:for each="{slide.image}" as="link">
+    <f:variable name="Slidelink" value="{link.originalResource.link}"/>
 </f:for>
-<div class="carousel-caption">
-    <f:if condition="{settings.options.showtitle} == 0">
-        <f:if condition="{slide.name}">
-            <div class="carousel-header">
-                <{slide.headerformat}>{slide.name}</{slide.headerformat}>
-            </div>
-        </f:if>
-    </f:if>
-    <f:if condition="{settings.options.showbodytext} == 0">
-        <f:if condition="{slide.description}">
-            <f:format.html>{slide.description}</f:format.html>
-        </f:if>
-    </f:if>
-</div>
+<f:if condition="{Slidelink}">
+    <f:then>
+      <f:link.typolink parameter="{Slidelink}">
+		  <f:debug>{Slidelink}</f:debug>
+          <f:for each="{slide.image}" as="image">
+              <f:image src="{image.uid}" treatIdAsReference="1"/>
+          </f:for>
+          <div class="carousel-caption">
+              <f:if condition="{settings.options.showtitle} == 0">
+                  <f:if condition="{slide.name}">
+                      <div class="carousel-header">
+                          <{slide.headerformat}>{slide.name}</{slide.headerformat}>
+					  </div>
+			</f:if>
+			</f:if>
+			<f:if condition="{settings.options.showbodytext} == 0">
+				<f:if condition="{slide.description}">
+					<f:format.html>{slide.description}</f:format.html>
+				</f:if>
+			</f:if>
+			</div>
+      </f:link.typolink>
+    </f:then>
+    <f:else>
+        <f:for each="{slide.image}" as="image">
+            <f:image src="{image.uid}" treatIdAsReference="1"/>
+        </f:for>
+        <div class="carousel-caption">
+            <f:if condition="{settings.options.showtitle} == 0">
+                <f:if condition="{slide.name}">
+                    <div class="carousel-header">
+                        <{slide.headerformat}>{slide.name}</{slide.headerformat}>
+					</div>
+			</f:if>
+			</f:if>
+			<f:if condition="{settings.options.showbodytext} == 0">
+				<f:if condition="{slide.description}">
+					<f:format.html>{slide.description}</f:format.html>
+				</f:if>
+			</f:if>
+			</div>
+    </f:else>
+</f:if>
