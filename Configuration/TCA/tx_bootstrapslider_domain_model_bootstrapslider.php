@@ -202,7 +202,7 @@ $GLOBALS['TCA']['tx_bootstrapslider_domain_model_bootstrapslider'] = array(
                         ],
                     ],
                 ),
-                $GLOBALS['TYPO3_CONF_VARS']['GFX']['mediafile_ext']
+                $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext']
             ),
         ),
         'name' => array(
