@@ -17,10 +17,8 @@ CREATE TABLE tx_bootstrapslider_domain_model_bootstrapslider (
     description text NOT NULL,
     image int(11) unsigned DEFAULT '0',
     slidelink varchar(255) DEFAULT '' NOT NULL,
-    ausrichtung int(11) unsigned DEFAULT '0',
-    buttonBackground varchar(255) DEFAULT '' NOT NULL,
-    buttonColor varchar(255) DEFAULT '' NOT NULL,
-
+    hidetitle int(11) DEFAULT '0' NOT NULL,
+    hidedescription int(11) DEFAULT '0' NOT NULL,
 
     tstamp int(11) unsigned DEFAULT '0' NOT NULL,
     crdate int(11) unsigned DEFAULT '0' NOT NULL,

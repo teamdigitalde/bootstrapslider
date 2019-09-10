@@ -64,6 +64,20 @@ class Bootstrapslider extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     protected $image = NULL;
 
     /**
+     * hidetitle
+     *
+     * @var string
+     */
+    protected $hidetitle = '';
+
+    /**
+     * hidedescription
+     *
+     * @var string
+     */
+    protected $hidedescription = '';
+
+    /**
      * __construct
      */
     public function __construct() {
@@ -179,4 +193,41 @@ class Bootstrapslider extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
         $this->image = $image;
     }
 
+    /**
+    * Returns the hidetitle
+    *
+    * @return string $hidetitle
+    */
+    public function getHidetitle() {
+    	return $this->hidetitle;
+    }
+
+    /**
+    * Sets the hidetitle
+    *
+    * @param string $hidetitle
+    * @return void
+    */
+    public function setHidetitle($hidetitle) {
+    	$this->hidetitle = $hidetitle;
+    }
+
+    /**
+    * Returns the hidedescription
+    *
+    * @return string $hidedescription
+    */
+    public function getHidedescription() {
+    	return $this->hidedescription;
+    }
+
+    /**
+    * Sets the hidedescription
+    *
+    * @param string $hidedescription
+    * @return void
+    */
+    public function setHidedescription($hidedescription) {
+    	$this->hidedescription = $hidedescription;
+    }
 }

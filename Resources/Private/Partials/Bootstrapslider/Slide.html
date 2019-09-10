@@ -8,14 +8,14 @@
               <f:image src="{image.uid}" treatIdAsReference="1"/>
           </f:for>
           <div class="carousel-caption">
-              <f:if condition="{settings.options.showtitle} == 0">
+              <f:if condition="{settings.options.showtitle} == 0 && {slide.hidetitle} == 0">
                   <f:if condition="{slide.name}">
                       <div class="carousel-header">
                           <{slide.headerformat}>{slide.name}</{slide.headerformat}>
 					  </div>
 			</f:if>
 			</f:if>
-			<f:if condition="{settings.options.showbodytext} == 0">
+			<f:if condition="{settings.options.showbodytext} == 0 && {slide.hidedescription} == 0">
 				<f:if condition="{slide.description}">
 					<f:format.html>{slide.description}</f:format.html>
 				</f:if>
@@ -28,14 +28,14 @@
             <f:image src="{image.uid}" treatIdAsReference="1"/>
         </f:for>
         <div class="carousel-caption">
-            <f:if condition="{settings.options.showtitle} == 0">
+            <f:if condition="{settings.options.showtitle} == 0 && {slide.hidetitle} == 0">
                 <f:if condition="{slide.name}">
                     <div class="carousel-header">
                         <{slide.headerformat}>{slide.name}</{slide.headerformat}>
 					</div>
+				</f:if>
 			</f:if>
-			</f:if>
-			<f:if condition="{settings.options.showbodytext} == 0">
+			<f:if condition="{settings.options.showbodytext} == 0 && {slide.hidedescription} == 0">
 				<f:if condition="{slide.description}">
 					<f:format.html>{slide.description}</f:format.html>
 				</f:if>

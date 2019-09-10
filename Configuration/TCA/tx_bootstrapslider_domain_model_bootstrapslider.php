@@ -27,7 +27,7 @@ $GLOBALS['TCA']['tx_bootstrapslider_domain_model_bootstrapslider'] = array(
         ],
     ),
     'interface' => array(
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, headerFormat, image, description',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, headerFormat, image, description, hidetitle, hidedescription',
     ),
     'types' => array(
         '1' => array(
@@ -35,7 +35,7 @@ $GLOBALS['TCA']['tx_bootstrapslider_domain_model_bootstrapslider'] = array(
         ),
     ),
     'palettes' => array(
-        '1' => array('showitem' => ''),
+        '1' => array('showitem' => 'hidetitle, hidedescription'),
     ),
     'columns' => array(
         /*'tt_content' => array(
@@ -65,7 +65,7 @@ $GLOBALS['TCA']['tx_bootstrapslider_domain_model_bootstrapslider'] = array(
         ],
         'hidden' => array(
             'exclude' => 0,
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
+            'label' => 'Datensatz ausblenden?',
             'config' => array(
                 'type' => 'check',
                 'items' => array(
@@ -242,5 +242,27 @@ $GLOBALS['TCA']['tx_bootstrapslider_domain_model_bootstrapslider'] = array(
             ),
             'defaultExtras' => 'richtext[]:rte_transform[mode=tx_examples_transformation-ts_css]',
         ),
+        'hidetitle' => [
+           'exclude' => 1,
+           'label' => 'Titel ausblenden',
+           'config' => [
+              'type' => 'check',
+              'items' => [
+                 ['Title ausblenden', 1],
+              ],
+              'cols' => '1',
+           ],
+        ],
+        'hidedescription' => [
+           'exclude' => 1,
+           'label' => 'Beschreibung ausblenden',
+           'config' => [
+              'type' => 'check',
+              'items' => [
+                 ['Beschreibung ausblenden', 1],
+              ],
+              'cols' => '1',
+           ],
+        ],
     )
 );

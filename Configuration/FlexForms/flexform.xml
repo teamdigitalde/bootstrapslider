@@ -49,7 +49,7 @@
                     <settings.options.uebergang>
                         <TCEforms>
                             <label>Übergang</label>
-                            <displayCond>FIELD:settings.options.items:>=:1</displayCond>
+                            <displayCond>FIELD:settings.options.items:=:1</displayCond>
                             <config>
                                 <type>select</type>
                                 <items type="array">
@@ -106,7 +106,6 @@
                     <settings.options.showpagination>
                         <TCEforms>
                             <label>Pagination ausblenden</label>
-                            <displayCond>FIELD:settings.options.items:>=:2</displayCond>
                             <onChange>reload</onChange>
                             <config>
                                 <type>check</type>
@@ -116,7 +115,6 @@
                     <settings.options.paginationType>
                         <TCEforms>
                             <label>Paginationtyp</label>
-                            <displayCond>FIELD:settings.options.showpagination:=:0</displayCond>
                             <config>
                                 <type>select</type>
                                 <items type="array">
@@ -138,7 +136,7 @@
                     </settings.options.paginationType>
                     <settings.options.shownavigation>
                         <TCEforms>
-                            <label>Navigation (Pfeile links und rechts)</label>
+                            <label>Navigation ausblenden (Pfeile links und rechts)</label>
                             <config>
                                 <type>check</type>
                             </config>
