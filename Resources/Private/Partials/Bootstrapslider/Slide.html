@@ -1,19 +1,40 @@
 <f:for each="{slide.image}" as="link">
     <f:variable name="Slidelink" value="{link.originalResource.link}"/>
 </f:for>
+<f:debug>{slide}</f:debug>
+<f:if condition="{slide.imagemedium.0}">
+	<f:then>
+		<f:variable name="imagemedium" value="{f:uri.image(src:slide.imagemedium.0.uid, treatIdAsReference: 1, absolute:false)}"/>
+	</f:then>
+	<f:else>
+		<f:variable name="imagemedium" value="{f:uri.image(src:slide.image.0.uid, treatIdAsReference: 1, absolute:false)}"/>
+	</f:else>
+</f:if>
+<f:if condition="{slide.imagesmall.0}">
+	<f:then>
+		<f:variable name="imagesmall" value="{f:uri.image(src:slide.imagesmall.0.uid, treatIdAsReference: 1, absolute:false)}"/>
+	</f:then>
+	<f:else>
+		<f:variable name="imagesmall" value="{f:uri.image(src:slide.image.0.uid, treatIdAsReference: 1, absolute:false)}"/>
+	</f:else>
+</f:if>
 <f:if condition="{Slidelink}">
     <f:then>
       <f:link.typolink parameter="{Slidelink}">
-          <f:for each="{slide.image}" as="image">
-              <f:image src="{image.uid}" treatIdAsReference="1"/>
-          </f:for>
+		  <picture>
+			  <source media="(min-width: 1200px)" srcset="{f:uri.image(src:slide.image.0.uid, treatIdAsReference: 1)}">
+			  <source media="(min-width: 768px)" srcset="{f:uri.image(src:slide.imagemedium.0.uid, treatIdAsReference: 1)}">
+			  <source media="(min-width: 0px)" srcset="{f:uri.image(src:slide.imagesmall.0.uid, treatIdAsReference: 1)}">
+			  <!---Fallback--->
+			  <img src="{f:uri.image(src:slide.image.0.uid, treatIdAsReference: 1)}" alt="wilde Blume vor einem Gebirgssee">
+		  </picture>
           <div class="carousel-caption">
               <f:if condition="{settings.options.showtitle} == 0 && {slide.hidetitle} == 0">
                   <f:if condition="{slide.name}">
                       <div class="carousel-header">
                           <{slide.headerformat}>{slide.name}</{slide.headerformat}>
 					  </div>
-			</f:if>
+			  </f:if>
 			</f:if>
 			<f:if condition="{settings.options.showbodytext} == 0 && {slide.hidedescription} == 0">
 				<f:if condition="{slide.description}">
@@ -24,9 +45,13 @@
       </f:link.typolink>
     </f:then>
     <f:else>
-        <f:for each="{slide.image}" as="image">
-            <f:image src="{image.uid}" treatIdAsReference="1"/>
-        </f:for>
+		<picture>
+			<source media="(min-width: 1200px)" srcset="{f:uri.image(src:slide.image.0.uid, treatIdAsReference: 1, absolute:false)}">
+			<source media="(min-width: 768px)" srcset="{imagemedium}">
+			<source media="(min-width: 0px)" srcset="{imagesmall}">
+			<!---Fallback--->
+			<f:image image="{slide.image.0}"></f:image>
+		</picture>
         <div class="carousel-caption">
             <f:if condition="{settings.options.showtitle} == 0 && {slide.hidetitle} == 0">
                 <f:if condition="{slide.name}">

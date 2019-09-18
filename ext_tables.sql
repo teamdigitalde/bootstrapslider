@@ -16,6 +16,8 @@ CREATE TABLE tx_bootstrapslider_domain_model_bootstrapslider (
     headerFormat varchar(255) DEFAULT 'h2' NOT NULL,
     description text NOT NULL,
     image int(11) unsigned DEFAULT '0',
+    imagemedium int(11) unsigned DEFAULT '0',
+    imagesmall int(11) unsigned DEFAULT '0',
     slidelink varchar(255) DEFAULT '' NOT NULL,
     hidetitle int(11) DEFAULT '0' NOT NULL,
     hidedescription int(11) DEFAULT '0' NOT NULL,

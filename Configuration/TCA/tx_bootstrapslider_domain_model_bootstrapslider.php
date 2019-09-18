@@ -27,11 +27,11 @@ $GLOBALS['TCA']['tx_bootstrapslider_domain_model_bootstrapslider'] = array(
         ],
     ),
     'interface' => array(
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, headerFormat, image, description, hidetitle, hidedescription',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, headerFormat, image, description, hidetitle, hidedescription, imagemedium, imagesmall',
     ),
     'types' => array(
         '1' => array(
-            'showitem' => 'l10n_diffsource, hidden;;1, name, headerFormat, image, description'
+            'showitem' => 'l10n_diffsource, hidden;;1, name, headerFormat, image, imagemedium, imagesmall, description'
         ),
     ),
     'palettes' => array(
@@ -142,7 +142,7 @@ $GLOBALS['TCA']['tx_bootstrapslider_domain_model_bootstrapslider'] = array(
         ),
         'image' => array(
             'exclude' => 0,
-            'label' => 'Bilder',
+            'label' => 'Bild: Desktop',
             'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
                 'image_slide', array(
                     'minitems' => 1,
@@ -264,5 +264,135 @@ $GLOBALS['TCA']['tx_bootstrapslider_domain_model_bootstrapslider'] = array(
               'cols' => '1',
            ],
         ],
+        'imagemedium' => array(
+            'exclude' => 0,
+            'label' => 'Bild: Tablet',
+            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+                'image_slide2', array(
+                'minitems' => 0,
+                'maxitems' => 1,
+                'appearance' => [
+                    'collapseAll' => 1,
+                    'createNewRelationLinkTitle' => 'Bild auswählen',
+                    'showAllLocalizationLink' => 1,
+                    'showSynchronizationLink' => 1,
+                    'showPossibleLocalizationRecords' => 1,
+                    'newRecordLinkTitle' => 'Neu',
+                    'levelLinksPosition' => 'top',
+                    'useSortable' => 0,
+                    'enabledControls' => array(
+                        'info' => 0,
+                        'dragdrop' => 0,
+                    )
+                ],
+                'overrideChildTca' => [
+                    'types' => [
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_UNKNOWN => [
+                            'showitem' => '
+                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;newsPalette,
+                                        --palette--;;imageoverlayPalette,
+                                        --palette--;;filePalette'
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => [
+                            'showitem' => '
+                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;newsPalette,
+                                        --palette--;;imageoverlayPalette,
+                                        --palette--;;filePalette'
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                            'showitem' => '
+                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;newsPalette,
+                                        --palette--;;imageoverlayPalette,
+                                        --palette--;;filePalette'
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => [
+                            'showitem' => '
+                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;newsPalette,
+                                        --palette--;;imageoverlayPalette,
+                                        --palette--;;filePalette'
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
+                            'showitem' => '
+                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;newsPalette,
+                                        --palette--;;imageoverlayPalette,
+                                        --palette--;;filePalette'
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
+                            'showitem' => '
+                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;newsPalette,
+                                        --palette--;;imageoverlayPalette,
+                                        --palette--;;filePalette'
+                        ]
+                    ],
+                ],
+            ),
+                $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext']
+            ),
+        ),
+        'imagesmall' => array(
+            'exclude' => 0,
+            'label' => 'Bild: Smartphone',
+            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+                'image_slide3', array(
+                'minitems' => 0,
+                'maxitems' => 1,
+                'appearance' => [
+                    'collapseAll' => 1,
+                    'createNewRelationLinkTitle' => 'Bild auswählen',
+                    'showAllLocalizationLink' => 1,
+                    'showSynchronizationLink' => 1,
+                    'showPossibleLocalizationRecords' => 1,
+                    'newRecordLinkTitle' => 'Neu',
+                    'levelLinksPosition' => 'top',
+                    'useSortable' => 0,
+                    'enabledControls' => array(
+                        'info' => 0,
+                        'dragdrop' => 0,
+                    )
+                ],
+                'overrideChildTca' => [
+                    'types' => [
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_UNKNOWN => [
+                            'showitem' => '
+                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;newsPalette,
+                                        --palette--;;imageoverlayPalette,
+                                        --palette--;;filePalette'
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => [
+                            'showitem' => '
+                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;newsPalette,
+                                        --palette--;;imageoverlayPalette,
+                                        --palette--;;filePalette'
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                            'showitem' => '
+                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;newsPalette,
+                                        --palette--;;imageoverlayPalette,
+                                        --palette--;;filePalette'
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => [
+                            'showitem' => '
+                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;newsPalette,
+                                        --palette--;;imageoverlayPalette,
+                                        --palette--;;filePalette'
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
+                            'showitem' => '
+                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;newsPalette,
+                                        --palette--;;imageoverlayPalette,
+                                        --palette--;;filePalette'
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
+                            'showitem' => '
+                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;newsPalette,
+                                        --palette--;;imageoverlayPalette,
+                                        --palette--;;filePalette'
+                        ]
+                    ],
+                ],
+            ),
+                $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext']
+            ),
+        ),
     )
 );

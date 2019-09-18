@@ -64,6 +64,22 @@ class Bootstrapslider extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     protected $image = NULL;
 
     /**
+     * Imagemedium
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     * @cascade remove
+     */
+    protected $imagemedium = NULL;
+
+    /**
+     * Imagesmall
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     * @cascade remove
+     */
+    protected $imagesmall = NULL;
+
+    /**
      * hidetitle
      *
      * @var string
@@ -95,6 +111,8 @@ class Bootstrapslider extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
      */
     protected function initStorageObjects() {
         $this->image = new ObjectStorage();
+        $this->imagemedium = new ObjectStorage();
+        $this->imagesmall = new ObjectStorage();
     }
 
     /**
@@ -191,6 +209,84 @@ class Bootstrapslider extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
      */
     public function setImage(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $image) {
         $this->image = $image;
+    }
+
+    /**
+     * Adds a FileReference
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $imagemedium
+     * @return void
+     */
+    public function addImagemedium(\TYPO3\CMS\Extbase\Domain\Model\FileReference $imagemedium) {
+        $this->imagemedium->attach($imagemedium);
+    }
+
+    /**
+     * Removes a FileReference
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $imagemediumToRemove The FileReference to be removed
+     * @return void
+     */
+    public function removeImagemedium(\TYPO3\CMS\Extbase\Domain\Model\FileReference $imagemediumToRemove) {
+        $this->imagemedium->detach($imagemediumToRemove);
+    }
+
+    /**
+     * Returns the imagemedium
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $imagemedium
+     */
+    public function getImagemedium() {
+        return $this->imagemedium;
+    }
+
+    /**
+     * Sets the imagemedium
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $imagemedium
+     * @return void
+     */
+    public function setImagemedium(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $imagemedium) {
+        $this->imagemedium = $imagemedium;
+    }
+
+    /**
+     * Adds a FileReference
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $imagesmall
+     * @return void
+     */
+    public function addImagesmall(\TYPO3\CMS\Extbase\Domain\Model\FileReference $imagesmall) {
+        $this->imagesmall->attach($imagesmall);
+    }
+
+    /**
+     * Removes a FileReference
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $imagesmallToRemove The FileReference to be removed
+     * @return void
+     */
+    public function removeImagesmall(\TYPO3\CMS\Extbase\Domain\Model\FileReference $imagesmallToRemove) {
+        $this->imagesmall->detach($imagesmallToRemove);
+    }
+
+    /**
+     * Returns the imagesmall
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $imagesmall
+     */
+    public function getImagesmall() {
+        return $this->imagesmall;
+    }
+
+    /**
+     * Sets the imagesmall
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $imagesmall
+     * @return void
+     */
+    public function setImagesmall(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $imagesmall) {
+        $this->imagesmall = $imagesmall;
     }
 
     /**
