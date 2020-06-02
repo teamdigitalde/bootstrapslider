@@ -17,6 +17,7 @@
                             <onChange>reload</onChange>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">1 Item</numIndex>
@@ -52,6 +53,7 @@
                             <displayCond>FIELD:settings.options.items:=:1</displayCond>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">Normal Slide</numIndex>
@@ -117,6 +119,7 @@
                             <label>Paginationtyp</label>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">Rechtecke</numIndex>

@@ -13,10 +13,7 @@ defined('TYPO3_MODE') || die();
     'TeamDigital.bootstrapslider',
     'bootstrapslider',
     'Bootstrapslider',
-    'EXT:bootstrapslider/Resources/Public/Icons/tx_bootstrapslider_bootstrapslider_pluginicon.png',
-    [
-        'Bootstrapslider' => 'slider',
-    ]
+    'EXT:bootstrapslider/Resources/Public/Icons/tx_bootstrapslider_bootstrapslider_pluginicon.png'
 );
 
 

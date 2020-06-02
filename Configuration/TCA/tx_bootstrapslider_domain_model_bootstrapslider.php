@@ -108,6 +108,7 @@ $GLOBALS['TCA']['tx_bootstrapslider_domain_model_bootstrapslider'] = array(
             'config' => array(
                 'readOnly' => true,
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'foreign_table' => 'sys_language',
                 'foreign_table_where' => 'ORDER BY sys_language.title',
                 'items' => array(
@@ -128,6 +129,7 @@ $GLOBALS['TCA']['tx_bootstrapslider_domain_model_bootstrapslider'] = array(
             'label' => 'LLL:EXT:lang/locallang_general.php:LGL.l18n_parent',
             'config' => Array(
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => Array(
                     Array('', 0),
                 ),
@@ -219,6 +221,7 @@ $GLOBALS['TCA']['tx_bootstrapslider_domain_model_bootstrapslider'] = array(
             'label' => 'Typ',
             'config' => array(
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'default' => 'div',
                 'items' => array(
                     array('Überschrift 2', 'h2'),
