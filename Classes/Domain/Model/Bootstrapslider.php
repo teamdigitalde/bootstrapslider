@@ -59,7 +59,7 @@ class Bootstrapslider extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
      * Image
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
-     * @cascade remove
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
      */
     protected $image = NULL;
 
@@ -67,7 +67,7 @@ class Bootstrapslider extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
      * Imagemedium
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
-     * @cascade remove
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
      */
     protected $imagemedium = NULL;
 
@@ -75,7 +75,7 @@ class Bootstrapslider extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
      * Imagesmall
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
-     * @cascade remove
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
      */
     protected $imagesmall = NULL;
 

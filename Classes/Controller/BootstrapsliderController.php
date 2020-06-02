@@ -39,7 +39,7 @@ class BootstrapsliderController extends \TYPO3\CMS\Extbase\Mvc\Controller\Action
      * BootstrapsliderRepository
      *
      * @var \TeamDigital\Bootstrapslider\Domain\Repository\BootstrapsliderRepository
-     * @inject
+     * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $bootstrapsliderRepository = NULL;
 
