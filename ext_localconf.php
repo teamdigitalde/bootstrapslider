@@ -28,7 +28,7 @@ if (TYPO3_MODE === 'BE') {
         $iconRegistry->registerIcon(
             $identifier,
             \TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class,
-            ['source' => 'EXT:'.$_EXTKEY.'/Resources/Public/Icons/' . $path]
+            ['source' => 'EXT:bootstrapslider/Resources/Public/Icons/' . $path]
         );
     }
 }
